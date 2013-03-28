@@ -9,7 +9,7 @@ class Syntra_Auth_Acl extends Zend_Controller_Plugin_Abstract
         // roles definieren
         $roles  = array('GUEST','USER','ADMIN');
         // controllers definieren
-        $controllers = array('Users','index','page','error','noaccess','admin:index');
+        $controllers = array('Users','index','page','error','noaccess','admin:index','admin:add-news');
         
         // rollen toevoegen aan de ACL
         foreach($roles as $role)

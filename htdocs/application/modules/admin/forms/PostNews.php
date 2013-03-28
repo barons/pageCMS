@@ -11,15 +11,11 @@ class Admin_Form_PostNews extends Zend_Form
         $this->setMethod('post');
         $this->setAttrib('enctype', 'multipart/form-data');
         
-        // LOGIN
-        
         $this->addElement(new Zend_Form_Element_Text('title', array(
             'label'     => 'title_lbl',
             'filters'   => array('stringTrim'),
             'required'  => true
         )));
-        
-        // password
         
         $this->addElement(new Zend_Form_Element_TextArea('text', array(
             'label'     => 'text_lbl',
@@ -27,7 +23,7 @@ class Admin_Form_PostNews extends Zend_Form
             'required'  => true
         )));
         
-        $btn = new Zend_Form_Element_Button('submit', array(
+        $btn = new Zend_Form_Element_Button('versturen', array(
             'type'      => 'submit',
             'value'     => 'submit_lbl',
             'required'  => false,
@@ -39,4 +35,3 @@ class Admin_Form_PostNews extends Zend_Form
 
 
 }
-
