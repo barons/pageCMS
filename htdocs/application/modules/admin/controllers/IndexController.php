@@ -10,12 +10,12 @@ class Admin_IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        
+        // die ('ik zit in de indexaction van admin');
     }
 
     public function addNewsAction()
     {
-        // die('ik zit in de admin module');
+        die('ik zit in de admin module');
         $PostNewsForm = new Admin_Form_PostNews();
         $this->view->form = $PostNewsForm;
         

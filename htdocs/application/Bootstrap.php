@@ -9,8 +9,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $front = $this->getResource('frontcontroller');
         $front->registerPlugin(new Syntra_Controller_Plugin_Translate());
         $front->registerPlugin(new Syntra_Controller_Plugin_Navigation());
-        $front->registerPlugin(new Syntra_Auth_Acl());
-        $front->registerPlugin(new Syntra_Auth_Auth());
+        // $front->registerPlugin(new Syntra_Auth_Acl());
+        // $front->registerPlugin(new Syntra_Auth_Auth());
     }
 
     public function _initDbAdapter(){
@@ -64,7 +64,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
                 )));
         
         $router->addRoute('admin',
-                new Zend_Controller_Router_Route('admin/:controller/:action',array(
+                new Zend_Controller_Router_Route(':lang/admin/:controller/:action',array(
                     'module'     => 'admin',
                     'controller' => 'index',
                     'action'     => 'index'
@@ -73,6 +73,12 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
                 new Zend_Controller_Router_Route('noaccess',array(
                     'controller' => 'noaccess',
                     'action'     => 'index'
+                )));
+        $router->addRoute('addnews',
+                new Zend_Controller_Router_Route(':lang/admin/addnews',array(
+                    'module'        => 'admin',
+                    'controller'    => 'index',
+                    'action'        => 'addNews'
                 )));
         
     }
